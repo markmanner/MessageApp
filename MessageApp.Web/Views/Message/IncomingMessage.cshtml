@@ -1,0 +1,14 @@
+﻿@model IEnumerable<MessageApp.Web.ViewModels.IncomingMessageViewModel>
+@{
+    ViewData["Title"] = "IncomingMessage";
+}
+
+<h3>IncomingMessages</h3>
+
+<ul id="messages" class="list-group">
+    @foreach (var message in Model)
+    {
+        <li class="list-group-item">@message.SenderName: @message.MessageText (@message.CreatedTime)</li>
+    }
+</ul>
+

@@ -1,0 +1,40 @@
+﻿@model MessageApp.Web.ViewModels.SendMessageViewModel
+@{
+    ViewData["Title"] = "SendMessage";
+}
+
+<h3>SendMessage</h3>
+
+<div class="row">
+    <div class="col-6">
+        <form asp-controller="Message" asp-action="SendMessage" method="post">
+            @Html.HiddenFor(m => m.IsAvailableMessageSending)
+            <div class="input-group mb-3 col-12">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">@Html.LabelFor(m => m.RecipientId, new { @class = "mb-0" })</label>
+                </div>
+                @Html.DropDownListFor(m => m.RecipientId, Model.Users, "Choose...", new { @class = "form-control col-12" })
+                <span asp-validation-for="RecipientId" class="text-danger col-12"></span>
+            </div>
+            <div class="input-group col-12">
+                <div class="input-group-prepend">
+                    <span class="input-group-text mb-0">@Html.LabelFor(m => m.MessageText, new { @class = "mb-0" })</span>
+                </div>
+                <textarea class="form-control col-12" asp-for="MessageText"></textarea>
+                <span asp-validation-for="MessageText" class="text-danger col-12"></span>
+
+            </div>
+            <div class="input-group col-12">
+                @if (Model.IsAvailableMessageSending)
+                {
+
+                    <button class="btn btn-primary mx-auto mt-3" type="submit">Sending</button>
+                }
+                else
+                {
+                    <p class="text-warning mx-auto">I am sorry, you can't send any more messages today.</p>
+                }
+            </div>
+        </form>
+    </div>
+</div>

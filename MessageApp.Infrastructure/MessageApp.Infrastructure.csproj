@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20190916143302_UserMessageInit.cs" />
+    <Compile Remove="Data\Migrations\20190916143302_UserMessageInit.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190916143617_UserMessageInit.cs" />
+    <Compile Remove="Data\Migrations\20190916143617_UserMessageInit.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190916172949_UserMessageInit.cs" />
+    <Compile Remove="Data\Migrations\20190916172949_UserMessageInit.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190916175336_UserMessage.cs" />
+    <Compile Remove="Data\Migrations\20190916175336_UserMessage.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Core" Version="1.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.2.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MessageApp.Core\MessageApp.Core.csproj" />
+  </ItemGroup>
+
+</Project>

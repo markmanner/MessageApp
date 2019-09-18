@@ -1,0 +1,23 @@
+﻿@model IEnumerable<MessageApp.Web.ViewModels.UserListViewModel>
+@{
+    ViewData["Title"] = "UserList";
+}
+
+<h3>@ViewData["Title"]</h3>
+    
+
+
+<div class="row">
+    <div class="float-left col-6">
+        <div class="list-group">
+            @foreach (var item in Model)
+            {
+                <a asp-controller="Message" asp-action="SendMessage" asp-route-recipientId="@item.Id" class="list-group-item list-group-item-action">@item.UserName</a>
+            }
+        </div>
+    </div>
+    <div class="col-6">
+        <span>Your state: </span>
+        <input class="mx-3" type="checkbox" checked data-toggle="toggle" data-size="sm" data-on="Show" data-off="Hide">
+    </div>
+</div>
